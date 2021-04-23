@@ -28,6 +28,7 @@ public class CarDuelMain {
                     System.out.print("Engine capacity: ");
                     double engineCapacity1 = scanner.nextDouble();
                     scanner.nextLine();
+                    System.out.println();
 
                     System.out.println("--- Car 2 ---");
                     System.out.print("Price: ");
@@ -39,9 +40,17 @@ public class CarDuelMain {
                     System.out.print("Engine capacity: ");
                     double engineCapacity2 = scanner.nextDouble();
                     scanner.nextLine();
+                    System.out.println();
 
                     Car car1 = new Car (price1,fuelConsuming1,engineCapacity1);
                     Car car2 = new Car (price2,fuelConsuming2,engineCapacity2);
+
+                    if(car1.compareTo(car2) > 0) {
+                        System.out.println("Better car is car 1\n");
+                    } else {
+                        System.out.println("Better car is car 2\n");
+                    }
+
                     break;
                 case 2:
                     break;
