@@ -1,6 +1,6 @@
 package pl.jakubkrys.best_webinar_ever;
 
-public class Webinar {
+public class Webinar implements Comparable<Webinar>{
 
     private String title;
     private int signedUp;
@@ -27,5 +27,20 @@ public class Webinar {
                 ", signedUp=" + signedUp +
                 ", present=" + present +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Webinar w2) {
+
+        int w1Result = getSignedUp() - getPresent();
+        int w2Result = w2.getSignedUp() - w2.getPresent();
+
+        if (w1Result > w2Result){
+            return -1;
+        } else if (w1Result < w2Result){
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

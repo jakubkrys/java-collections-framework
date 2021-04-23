@@ -5,22 +5,32 @@ import java.util.Scanner;
 public class WebinarMain {
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
         Webinar theBestWebinar = null;
         int option;
 
         do {
-            option = menu();
+            option = menu(scanner);
 
             switch (option) {
                 case 1:
                     System.out.println(theBestWebinar);
                     break;
                 case 2:
-                    Webinar webinar = insertWebinar();
-                    theBestWebinar = compareToTheBestByComparator(theBestWebinar, webinar);
+                    Webinar webinar = insertWebinar(scanner);
+                    //theBestWebinar = compareToTheBestByComparator(theBestWebinar, webinar);
+                    theBestWebinar = compareToTheBestByComparable(theBestWebinar, webinar);
                     break;
             }
         } while (option != 0);
+        scanner.close();
+    }
+
+    private static Webinar compareToTheBestByComparable(Webinar theBestWebinar, Webinar webinar) {
+        if (theBestWebinar == null || (theBestWebinar.compareTo(webinar)) < 0) {
+            theBestWebinar = webinar;
+        }
+        return theBestWebinar;
     }
 
     private static Webinar compareToTheBestByComparator(Webinar theBestWebinar, Webinar webinar) {
@@ -32,8 +42,8 @@ public class WebinarMain {
         return theBestWebinar;
     }
 
-    private static Webinar insertWebinar() {
-        Scanner scanner = new Scanner(System.in);
+    private static Webinar insertWebinar(Scanner scanner) {
+
         System.out.print("Title: ");
         String title = scanner.nextLine();
         System.out.print("Signed up: ");
@@ -44,12 +54,11 @@ public class WebinarMain {
         scanner.nextLine();
 
         Webinar webinar = new Webinar(title, signedUp, present);
-        scanner.close();
         return webinar;
     }
 
-    private static int menu() {
-        Scanner scanner = new Scanner(System.in);
+    private static int menu(Scanner scanner) {
+
         int option;
         System.out.println("----- The best webinar -----");
         System.out.println("1 - display the best webinar");
@@ -57,7 +66,6 @@ public class WebinarMain {
         System.out.println("0 - quit");
         option = scanner.nextInt();
         scanner.nextLine();
-        scanner.close();
         return option;
     }
 }
