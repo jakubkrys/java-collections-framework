@@ -25,15 +25,6 @@ public class Car  implements Comparable<Car>{
     }
 
     @Override
-    public String toString() {
-        return "Car{" +
-                "price=" + price +
-                ", fuelConsumption=" + fuelConsumption +
-                ", engineCapacity=" + engineCapacity +
-                '}';
-    }
-
-    @Override
     public int compareTo(Car car2) {
         int result = 0;
 
