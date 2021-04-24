@@ -1,8 +1,11 @@
 package pl.jakubkrys.car_duel;
 
-public class CarsComparator {
+import java.util.*;
 
-    public void compare(Car car1, Car car2) {
+public class CarsComparator implements Comparator<Car> {
+
+    @Override
+    public int compare(Car car1, Car car2) {
         int result = 0;
 
         if(car1.getPrice() > car2.getPrice()){
@@ -23,10 +26,6 @@ public class CarsComparator {
             result--;
         }
 
-        if(result > 0) {
-            System.out.println("Better car is car 1\n");
-        } else {
-            System.out.println("Better car is car 2\n");
-        }
+        return result;
     }
 }
