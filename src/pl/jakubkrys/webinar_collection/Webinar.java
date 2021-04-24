@@ -1,6 +1,6 @@
 package pl.jakubkrys.webinar_collection;
 
-public class Webinar implements Comparable<Webinar> {
+public class Webinar /*implements Comparable<Webinar>*/ {
 
     private String date;
     private String title;
@@ -33,18 +33,18 @@ public class Webinar implements Comparable<Webinar> {
     }
 
 
-    @Override
-    public int compareTo(Webinar w2) {
-
-        double w1Result = ((double)getPresent()/getSignedUp())*100;
-        double w2Result = ((double)w2.getPresent()/w2.getSignedUp())*100;
-
-        if (w1Result > w2Result){
-            return -1;
-        } else if (w1Result < w2Result){
-            return 1;
-        } else {
-            return 0;
-        }
-    }
+//    @Override
+//    public int compareTo(Webinar w2) {
+//
+//        double w1Result = ((double)getPresent()/getSignedUp())*100;
+//        double w2Result = ((double)w2.getPresent()/w2.getSignedUp())*100;
+//
+//        if (w1Result > w2Result){
+//            return -1;
+//        } else if (w1Result < w2Result){
+//            return 1;
+//        } else {
+//            return 0;
+//        }
+//    }
 }

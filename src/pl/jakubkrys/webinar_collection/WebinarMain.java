@@ -5,7 +5,7 @@ import java.util.*;
 public class WebinarMain {
     public static void main(String[] args) {
 
-        Set<Webinar> webinars = new TreeSet<>();
+        Set<Webinar> webinars = new TreeSet<>(new WebinarComparator());
         Scanner scanner = new Scanner(System.in);
         int option;
 
