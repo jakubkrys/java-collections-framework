@@ -22,13 +22,20 @@ public class CarDuelMain {
                     Car car2 = parametersOfCar2(scanner);
 
 //                    compareCarsWithComparable(car1, car2);
-                    carsComparator.compare(car1, car2);
-                    break;
+                    compareCarsWithComparator(carsComparator, car1, car2);
                 case 0:
                     break;
             }
         } while (option != 0);
         scanner.close();
+    }
+
+    private static void compareCarsWithComparator(CarsComparator carsComparator, Car car1, Car car2) {
+        if(carsComparator.compare(car1, car2) > 0) {
+            System.out.println("Better car is car 1\n");
+        } else {
+            System.out.println("Better car is car 2\n");
+        };
     }
 
     private static Car parametersOfCar1(Scanner scanner) {
