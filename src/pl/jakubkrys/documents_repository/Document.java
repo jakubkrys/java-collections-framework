@@ -9,4 +9,12 @@ public class Document {
         this.name = name;
         this.content = content;
     }
+
+    @Override
+    public String toString() {
+        return "Document{" +
+                "name='" + name + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }
