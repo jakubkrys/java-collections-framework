@@ -17,4 +17,12 @@ public class DocumentsRepository {
     public void removeById(int id) {
         documents.remove(id);
     }
+
+    public boolean contains(Document document) {
+        return documents.contains(document);
+    }
+
+    public List<Document> readAll() {
+        return documents;
+    }
 }
