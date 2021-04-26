@@ -18,10 +18,11 @@ public class DocumentsRepositoryMain {
                     createDocument();
                     break;
                 case 2:
-                    readDocumentById();
+                    Document document = readDocumentById();
+                    System.out.println(document);
                     break;
                 case 3:
-                    System.out.println("3 - update document template");
+                    updateDocument();
                     break;
                 case 4:
                     System.out.println("4 - delete document template");
@@ -31,13 +32,40 @@ public class DocumentsRepositoryMain {
         scanner.close();
     }
 
-    private static void readDocumentById() {
+    private static void updateDocument() {
+        Document document = readDocumentById();
+        System.out.println(document);
+        int option = updateDocumentMenu();
+
+        switch (option){
+            case 1:
+                System.out.print("Name: ");
+                String name = scanner.nextLine();
+                document.setName(name);
+                break;
+            case 2:
+                System.out.print("Content: ");
+                String content = scanner.nextLine();
+                document.setContent(content);
+                break;
+        }
+    }
+
+    private static int updateDocumentMenu() {
+        System.out.println("1 - update name");
+        System.out.println("2 - update content");
+        int option = scanner.nextInt();
+        scanner.nextLine();
+
+        return option;
+    }
+
+    private static Document readDocumentById() {
         System.out.print("ID: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        Document document = documentsRepository.getById(id);
-        System.out.println(document);
+        return documentsRepository.getById(id);
     }
 
     private static void createDocument() {
