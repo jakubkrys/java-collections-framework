@@ -13,4 +13,8 @@ public class DocumentsRepository {
     Document getById(int id) {
         return documents.get(id-1);
     }
+
+    public void removeById(int id) {
+        documents.remove(id);
+    }
 }

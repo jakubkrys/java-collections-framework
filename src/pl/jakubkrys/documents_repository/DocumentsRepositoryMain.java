@@ -25,11 +25,19 @@ public class DocumentsRepositoryMain {
                     updateDocument();
                     break;
                 case 4:
-                    System.out.println("4 - delete document template");
+                    deleteDocument();
                     break;
             }
         } while (option != 0);
         scanner.close();
+    }
+
+    private static void deleteDocument() {
+        System.out.print("ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        documentsRepository.removeById(id);
     }
 
     private static void updateDocument() {
