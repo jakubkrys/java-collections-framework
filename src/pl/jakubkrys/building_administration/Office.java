@@ -1,5 +1,7 @@
 package pl.jakubkrys.building_administration;
 
+import java.util.Objects;
+
 public class Office {
 
     private int stage;
@@ -25,8 +27,29 @@ public class Office {
         return company;
     }
 
+    public int getStage() {
+        return stage;
+    }
+
+    public int getOfficeNumber() {
+        return officeNumber;
+    }
+
     @Override
     public String toString() {
         return "\n"+"Stage: " + stage + "\n" + "Office no.: " + officeNumber + "\n" + company;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Office office = (Office) o;
+        return stage == office.stage && officeNumber == office.officeNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(stage, officeNumber);
     }
 }
