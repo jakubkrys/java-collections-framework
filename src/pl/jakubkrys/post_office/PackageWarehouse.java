@@ -13,4 +13,8 @@ public class PackageWarehouse {
             return "Error with adding package to warehouse. Try again.";
         }
     }
+
+    public void pickUp() {
+        System.out.println(warehouse.remove());
+    }
 }

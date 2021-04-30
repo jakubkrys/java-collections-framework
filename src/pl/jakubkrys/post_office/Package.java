@@ -19,6 +19,15 @@ public class Package {
     }
 
     @Override
+    public String toString() {
+        return "Package{" +
+                "size='" + size + '\'' +
+                ", weight=" + weight +
+                ", priority=" + priority +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

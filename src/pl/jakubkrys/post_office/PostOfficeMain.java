@@ -45,10 +45,15 @@ public class PostOfficeMain {
                     }
 
                     Package p = new Package (size, weight, priority);
-                    packageWarehouse.add(p);
+                    System.out.println(packageWarehouse.add(p));
 
                     break;
                 case 2:
+                    try {
+                        packageWarehouse.pickUp();
+                    } catch (NoSuchElementException e){
+                        System.out.println("Warehouse is empty.");
+                    }
                     break;
             }
 

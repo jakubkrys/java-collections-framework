@@ -9,10 +9,10 @@ public class PackageComparator implements Comparator<Package> {
         int p1Priority = p1.getPriority().ordinal();
         int p2Priority = p2.getPriority().ordinal();
 
-        if(p1Priority > p2Priority){
-            return -1;
-        } else {
+        if(p1Priority >= p2Priority){
             return 1;
+        } else {
+            return -1;
         }
     }
 }
