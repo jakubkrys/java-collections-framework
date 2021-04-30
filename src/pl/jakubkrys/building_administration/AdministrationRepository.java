@@ -7,7 +7,12 @@ public class AdministrationRepository {
     private List<Office> offices = new ArrayList<>();
 
     public void add(Office office) {
-        offices.add(office);
+        if (!(offices.contains(office))) {
+            offices.add(office);
+            System.out.println("Company added on stage " + office.getStage() + ", in office no. " + office.getOfficeNumber());
+        } else {
+            System.out.println("This office is occupied. Please choose another stage or office.");
+        }
     }
 
     public void remove(Office officeByCompanyName) {
