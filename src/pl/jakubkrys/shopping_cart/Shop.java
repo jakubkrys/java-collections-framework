@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Shop {
 
-    private Map<Product,Integer> shoppingCart = new HashMap<>();
+    private Map<Product,Integer> shoppingCart = new LinkedHashMap<>();
     
     public void add (Product product, int count){
         shoppingCart.put(product,count);
@@ -12,10 +12,11 @@ public class Shop {
     
     public double calculate(){
         double sum = 0;
-        Iterator<Map.Entry<Product,Integer>> iterator = shoppingCart.entrySet().iterator();
+        var iterator = shoppingCart.entrySet().iterator();
 
         while (iterator.hasNext()) {
-            Map.Entry <Product,Integer> entry = iterator.next();
+            var entry = iterator.next();
+            System.out.println(entry.getKey().getName());
             sum += entry.getKey().getPrice() * entry.getValue();
         }
         return sum;
