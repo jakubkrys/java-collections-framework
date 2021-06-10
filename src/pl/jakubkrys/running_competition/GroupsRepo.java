@@ -21,4 +21,12 @@ public class GroupsRepo {
             System.out.println("Cannot find group "+groupNameDisplay+" in database");
         }
     }
+
+    public void addRunnerToGroup(String groupNameToAddRunner, String runnerToAddName) {
+        groupsRepo.get(groupNameToAddRunner).add(runnerToAddName);
+    }
+
+    public void removeRunnerFromGroup(String groupNameToRemoveRunner, String runnerToRemoveName) {
+        groupsRepo.get(groupNameToRemoveRunner).remove(runnerToRemoveName);
+    }
 }

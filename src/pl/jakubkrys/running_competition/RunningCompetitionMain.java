@@ -46,10 +46,18 @@ public class RunningCompetitionMain {
                     groupsRepo.addGroup(groupName, runners);
                     break;
                 case 2:
-
+                    System.out.print("Group name: ");
+                    String groupNameToAddRunner = scanner.nextLine();
+                    System.out.print("Runner's name and surname: ");
+                    String runnerToAddName = scanner.nextLine();
+                    groupsRepo.addRunnerToGroup(groupNameToAddRunner, runnerToAddName);
                     break;
                 case 3:
-
+                    System.out.print("Group name: ");
+                    String groupNameToRemoveRunner = scanner.nextLine();
+                    System.out.print("Runner's name and surname: ");
+                    String runnerToRemoveName = scanner.nextLine();
+                    groupsRepo.removeRunnerFromGroup(groupNameToRemoveRunner, runnerToRemoveName);
                     break;
                 case 4:
                     System.out.print("Group name: ");
