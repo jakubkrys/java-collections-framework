@@ -29,7 +29,7 @@ public class RunningCompetitionMain {
                     String groupName = scanner.nextLine();
                     do {
                         System.out.println("1 - add runner to group");
-                        System.out.println("0 - quit");
+                        System.out.println("0 - finish");
                         addRunnerOption = scanner.nextInt();
                         scanner.nextLine();
 
@@ -52,10 +52,12 @@ public class RunningCompetitionMain {
 
                     break;
                 case 4:
-                    groupsRepo.displayAllGroups();
+                    System.out.print("Group name: ");
+                    String groupNameDisplay = scanner.nextLine();
+                    groupsRepo.displayRunnersFromGroup(groupNameDisplay);
                     break;
                 case 5:
-
+                    groupsRepo.displayAllGroups();
                     break;
             }
         } while (option != 0);

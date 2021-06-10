@@ -13,4 +13,12 @@ public class GroupsRepo {
     public void displayAllGroups(){
         System.out.println(groupsRepo.entrySet());
     }
+
+    public void displayRunnersFromGroup(String groupNameDisplay) {
+        if(groupsRepo.get(groupNameDisplay) != null){
+            System.out.println(groupsRepo.get(groupNameDisplay));
+        } else {
+            System.out.println("Cannot find group "+groupNameDisplay+" in database");
+        }
+    }
 }
